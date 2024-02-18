@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+  body {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .container {
+    max-width: 1170px;
+    margin: auto;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer-ul {
+    list-style: none;
+  }
+
+  .footer {
+    background-color: #ce512e;
+    padding: 70px 0;
+  }
+
+  .footer-col {
+    width: 25%;
+    padding: 0 15px;
+  }
+
+  .footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #000000;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+  }
+
+  .footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  .footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+  }
+
+  .footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+  }
+
+  .footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+  }
+
+  /*responsive*/
+  @media(max-width: 767px) {
+    .footer-col {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+  }
+
+  @media(max-width: 574px) {
+    .footer-col {
+      width: 100%;
+    }
+  }
+
+
+
+
+
+  html {
+    background-color: #111;
+  }
+
+  .photo {
+    width: 35vw;
+    height: 400px;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+
+    &:hover img {
+      transform: scale(1.125);
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      top: 0;
+      right: 0;
+      background-image: linear-gradient(to top, rgba(0, 0, 0, .75) 10%, transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  .first_img {
+    max-width: 100%;
+    transform: scale(1.1);
+    transition: all 1s ease-out;
+  }
+
+  .caption {
+    font-family: Open Sans, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    z-index: 10;
+    pointer-events: none;
+
+    a {
+      display: block;
+      font-size: 1rem;
+      color: white;
+      margin-top: .5rem;
+      font-weight: normal;
+    }
+  }
+
+  @media(min-width:375) {}
+</style>
+
+<body>
+
+  <!--Navigation Bar-->
+
+  <nav class="navbar navbar-expand-md  navbar-dark mb-1 p-4" style="background-color: #ce512e; ">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="#">Yashwant</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item ms-5">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Content
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+  <!--body of content-->
+
+
+
+
+  <div class="bg-dark">
+
+
+
+    <div class="container-md bg-dark mb-5 text-light">
+
+      <div class="row">
+
+        <div class="col-4 mt-5 justify-content-center mb-4">
+          <div class="photo rounded">
+            <div class="js-tilt-image">
+              <img class="first_img" src="/image/img.jpg">
+            </div>
+            <div class="caption">Yashwant<br>Farswan <a href="https://google.com">Link</a></div>
+          </div>
+        </div>
+
+        <div class="col-2 mt-4 mb-5">
+
+        </div>
+
+        <div class="col-5 ">
+          <div class="row">
+            <h1 class="mt-5 ">
+              Yashwant<br>Farswan
+            </h1>
+          </div>
+          <div class="row mt-5 mb-2">
+            <h6 class="pr-4">Visual Artist</h6>
+          </div>
+          <div class="row ">
+            <p class="pr-4">
+              I've been painting for eight years. While being an artist is a difficult tug-of-war between my inner
+              dreamer
+              and critic, I've grown to love this process a lot. It hasn't just taught me much about the world, but also
+              about myself.
+            </p>
+          </div>
+
+          <div class="">
+            <a class="btn btn-outline-dark" style="background-color: #ce512e;" href="#" role="button">View my work</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!--ART Gallery-->
+
+  <div class="container mt-5 p-5">
+    <div class="row mb-5">
+      <h1>SAMPLE WORK</h1>
+    </div>
+
+
+    <div class="row">
+
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/image/drawing1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="image/drawing2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/image/drawing3.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+
+  <div class="bg-dark">
+
+    <div class="container text-light ">
+      <div class="row">
+        <div class="col">
+          <div class="row mb-5 mt-5"></div>
+          <div class="row mb-5 mt-5">
+            <h1>My Canvas</h1>
+          </div>
+
+          <div class="row mb-1"></div>
+
+
+
+          <div class="row mt-1 mb-1 ms-3">
+            <div class="col pl-5 ">
+              <h4 class="pl-5">I specialize in oil on canvas and abstract concepts.</h4>
+            </div>
+            <div class="col "></div>
+          </div>
+          <div class="row ms-3">
+            <div class="col">
+              <p>While I've been trained in different mediums, I found a deep connection to traditional paintings. I
+                love
+                how it communicates so much of the creator to the audience. Ironically, the communication feels easier
+                in
+                the abstract.</p>
+            </div>
+            <div class="col"></div>
+          </div>
+        </div>
+
+
+        <div class="col m-5">
+          <div class="row m-5">
+            <img class="rounded" src="/image/yaswant_photo.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div class="bg-light">
+
+    <div class="container text-dark ">
+      <div class="row">
+        <div class="col">
+          <div class="row mb-5 mt-5"></div>
+          <div class="row mb-5 mt-5">
+            <h1>My Journey</h1>
+          </div>
+
+          <div class="row mb-1"></div>
+
+          <div class="row ">
+            <div class="col mb-5 ">
+              <img class="" src="/image/yassu.jpg" height="500" width="300">
+            </div>
+            <div class="col">
+              <div class="row mt-5">
+                <div class="row mb-5 mt-5"></div>
+                <p class="fs-4">Education and Artist Residencies</p>
+              </div>
+              <div class="row ms-4">
+                <ul>
+                  <li>Undergraduate Fine Arts Program at Trempleway Academy</li>
+                  <li>
+                    Post-graduate Degree in Abstract Painting from Salguerro University</li>
+                  <li>Artist-in-Residence at Salguerro Art Studios</li>
+                  <li>Artist-in-Residence at Crystalshore Creative Retreats</li>
+                </ul>
+              </div>
+            
+            </div>
+            <div class="col ">
+              <div class="row mt-5">
+                <div class="row mb-5 mt-5"></div>
+                <p class="fs-4">Galleries and
+                  Exhibits</p>
+              </div>
+              <div class="row ms-4">
+                <ul>
+                  <li>Salguerro Sun Gallery (guest artist)</li>
+                  <li>
+                    RKND Fine Arts Studio (group show)</li>
+                  <li>Crystalshore Art Gallery (solo exhibit)</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!--Footer-->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Yashwant</h4>
+          <ul class="footer-ul">
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">Work</a></li>
+          </ul>
+        </div>
+
+
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script>
+    var aFx = 60,
+      trF = 4;
+    $('.js-tilt-image').on('mousemove', function (e) {
+      var cH = $(this).closest('.photo').innerHeight(),
+        cW = $(this).closest('.photo').innerWidth(),
+        eX = e.offsetX,
+        eY = e.offsetY;
+
+      TweenMax.set(this, {
+        transformOrigin: ((eX / (cW * trF) / 100 * 10000) + (trF * 10)) + '% ' + ((eY / (cH * trF) / 100 * 10000) + (trF * 10)) + '%',
+        transformPerspective: 1500
+      });
+      TweenMax.to(this, 0.5, {
+        rotationX: ((eY - cH / 2) / aFx),
+        rotationY: ((eX - cW / 2) / aFx),
+        y: (eY - (cH / 2)) / (70),
+        x: (eX - (cW / 2)) / (70)
+      });
+
+
+    }).on('mouseout', function (e) {
+      TweenMax.to(this, 1, {
+        delay: .2,
+        y: 0,
+        x: 0,
+        rotationX: 0,
+        rotationY: 0,
+        transformPerspective: '1500'
+      });
+    });
+  </script>
+</body>
+
+</html>
